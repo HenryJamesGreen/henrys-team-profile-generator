@@ -1,3 +1,4 @@
+
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -30,6 +31,7 @@ const promptQuestions = [
   },
 ];
 
+/*
 inquirer
   .prompt(promptQuestions)
   .then((response) => {
@@ -38,7 +40,8 @@ inquirer
       response.id,
       response.email
     );
+
+    module.exports = newEmployee;
   })
   .catch((err) => console.log(err));
-
-module.exports = Employee;
+*/

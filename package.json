@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/HenryJamesGreen/henrys-team-profile-generator#readme",
   "dependencies": {
-    "inquirer": "^9.1.4"
+    "inquirer": "^6.5.2",
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "jest": "^29.4.3"
