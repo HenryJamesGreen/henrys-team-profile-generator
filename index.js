@@ -33,6 +33,12 @@ const promptQuestions = [
 inquirer
   .prompt(promptQuestions)
   .then((response) => {
-    const newEmployee = new Employee(response);
+    const newEmployee = new Employee(
+      response.name,
+      response.id,
+      response.email
+    );
   })
   .catch((err) => console.log(err));
+
+module.exports = Employee;
