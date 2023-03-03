@@ -1,0 +1,29 @@
+{
+  "name": "henrys-team-profile-generator",
+  "version": "1.0.0",
+  "description": "An application designed to take user-inputted information about employees on a software engineering team, that then generates an HTML webpage that displays summaries for each person.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenryJamesGreen/henrys-team-profile-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenryJamesGreen/henrys-team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/HenryJamesGreen/henrys-team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "jest": "^29.4.3"
+  }
+}
