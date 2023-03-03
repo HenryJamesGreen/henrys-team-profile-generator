@@ -13,3 +13,12 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
+
+inquirer
+.prompt([
+    {
+        type: "input",
+        message: "Please enter the team manager's name",
+        name: "name",
+    }
+])
