@@ -51,6 +51,13 @@ const promptQuestions = [
     type: "input",
     message: "please enter the Team Manager's office number:",
     name: "officeNo",
+    validate: function (officeNoInput) {
+      if (!isNaN(officeNoInput)) {
+        return true;
+      } else {
+        return "Please enter a valid office number.";
+      }
+    },
   },
 ];
 
@@ -104,6 +111,12 @@ const engineerQuestions = [
     type: "input",
     message: "please enter the Engineer's GitHub username:",
     name: "enGithub",
+    validate: function (gitInput) {
+      if (gitInput.trim() === "") {
+        return "Please enter a GitHub username.";
+      }
+      return true;
+    },
   },
 ];
 
