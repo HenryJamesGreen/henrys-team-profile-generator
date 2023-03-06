@@ -104,32 +104,67 @@ inquirer
       managerName,
       managerId,
       managerEmail,
-      managerOffice,
-
-      let licenseBadge;
-      switch (response.license) {
-        case "MIT":
-          licenseBadge =
-            "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-          break;
-        case "Apache":
-          licenseBadge =
-            "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-          break;
-        case "BSD 3-Clause":
-          licenseBadge =
-            "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
-          break;
-        case "GNU GPL v3":
-          licenseBadge =
-            "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-          break;
-        default:
-          licenseBadge = "";
-      }
+      managerOffice
     );
 
     //module.exports = newEmployee;
     console.log(manager);
+
+    const menuFunc = function () {
+      inquirer
+        .prompt(menu)
+        .then((response) => {
+          let menuOptions = response.menu;
+          switch (menuOptions) {
+            case "Add an engineer":
+              inquirer.prompt(engineerQuestions).then((response) => {
+                console.log(response);
+
+                const engineerName = response.enName;
+                const engineerId = response.enId;
+                const engineerEmail = response.enEmail;
+                const engineerGitHub = response.enGithub;
+
+                const engineer = new Engineer(
+                  engineerName,
+                  engineerId,
+                  engineerEmail,
+                  engineerGitHub
+                );
+
+                menuFunc();
+              });
+              break;
+
+            case "Add an intern":
+              inquirer.prompt(internQuestions).then((response) => {
+                console.log(response);
+
+             
+
+                const internName = response.internName;
+                const internId = response.internId;
+                const internEmail = response.internEmail;
+                const internSchool = response.internSchool;
+
+                const Intern = new Intern
+
+                menuFunc();
+              });
+              break;
+
+            case "Finish building the team":
+              console.log("You have finished building your team!");
+
+              break;
+
+            default:
+              console.log("try again");
+              break;
+          }
+        })
+        .catch((err) => console.log(err));
+    };
+    menuFunc();
   })
   .catch((err) => console.log(err));
