@@ -10,6 +10,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
+//teamMembers array to hold info to be used in render.
+
 const teamMembers = [];
 
 // Questions for manager.
@@ -80,8 +82,10 @@ const engineerQuestions = [
     message: "Please enter the Engineer's name:",
     name: "enName",
     validate: function (EnInput) {
+      //.trim() to remove whitespace and return to 'name'
       const name = EnInput.trim();
 
+      //search 'name' object for letters.
       if (/^[A-Za-z\s]+$/.test(name)) {
         return true;
       } else {
@@ -99,6 +103,7 @@ const engineerQuestions = [
     message: "please enter the Engineer's email:",
     name: "enEmail",
     validate: function (enEmInput) {
+      //search for '@' and '.' to be included for email.
       const enEmailInputVal = /\S+@\S+\.\S+/;
       if (enEmailInputVal.test(enEmInput)) {
         return true;
@@ -112,6 +117,7 @@ const engineerQuestions = [
     message: "please enter the Engineer's GitHub username:",
     name: "enGithub",
     validate: function (gitInput) {
+      //if empty string, return false and try again.
       if (gitInput.trim() === "") {
         return "Please enter a GitHub username.";
       }
@@ -190,6 +196,8 @@ inquirer
     console.log(manager);
     teamMembers.push(manager);
 
+    //menu function to select multiple choice sections. Switch case allows for different options, depending on case selected.
+
     const menuFunc = function () {
       inquirer
         .prompt(menu)
@@ -212,6 +220,7 @@ inquirer
                   engineerGitHub
                 );
                 teamMembers.push(engineer);
+                //call menu function upon completion.
                 menuFunc();
               });
               break;
@@ -239,7 +248,9 @@ inquirer
 
             case "Finish building the team":
               console.log("You have finished building your team!");
+              //Render. Retreive template file and assign 'teamMembers' array to it.
               const html = render(teamMembers);
+              //write files.
               fs.writeFile(outputPath, html, (err) => {
                 if (err) throw err;
                 console.log(
@@ -254,8 +265,10 @@ inquirer
               break;
           }
         })
+        //first catch for the creation OF output directory.
         .catch((err) => console.log(err));
     };
     menuFunc();
   })
+  //second catch for writing the rendered HTML file TO the output directory.
   .catch((err) => console.log(err));

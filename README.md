@@ -32,6 +32,8 @@ MIT
 - https://heynode.com/tutorial/create-packagejson-file/
 - https://www.npmjs.com/package/inquirer
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+- https://www.w3schools.com/jsref/jsref_regexp_test.asp
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
 
 ## Questions
 
