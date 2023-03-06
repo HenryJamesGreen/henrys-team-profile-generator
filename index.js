@@ -12,13 +12,22 @@ const render = require("./src/page-template.js");
 
 const teamMembers = [];
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+// Questions for manager.
 
 const promptQuestions = [
   {
     type: "input",
     message: "Please enter the Team Manager's name:",
     name: "manName",
+    validate: function (manInput) {
+      const name = manInput.trim();
+
+      if (/^[A-Za-z\s]+$/.test(name)) {
+        return true;
+      } else {
+        return "Please enter a valid name (letters and spaces only)";
+      }
+    },
   },
   {
     type: "input",
@@ -37,6 +46,8 @@ const promptQuestions = [
   },
 ];
 
+//menu select.
+
 const menu = [
   {
     type: "list",
@@ -46,11 +57,22 @@ const menu = [
   },
 ];
 
+//Engineer questions
+
 const engineerQuestions = [
   {
     type: "input",
     message: "Please enter the Engineer's name:",
     name: "enName",
+    validate: function (EnInput) {
+      const name = EnInput.trim();
+
+      if (/^[A-Za-z\s]+$/.test(name)) {
+        return true;
+      } else {
+        return "Please enter a valid name (letters and spaces only)";
+      }
+    },
   },
   {
     type: "input",
@@ -69,11 +91,22 @@ const engineerQuestions = [
   },
 ];
 
+//Intern questions.
+
 const internQuestions = [
   {
     type: "input",
     message: "Please enter the Intern's name:",
     name: "internName",
+    validate: function (InInput) {
+      const name = InInput.trim();
+
+      if (/^[A-Za-z\s]+$/.test(name)) {
+        return true;
+      } else {
+        return "Please enter a valid name (letters and spaces only)";
+      }
+    },
   },
   {
     type: "input",
@@ -92,6 +125,8 @@ const internQuestions = [
   },
 ];
 
+//call inquirer to identify and store user-inputted responses and push the responses to 'teamMembers' array.
+
 inquirer
   .prompt(promptQuestions)
   .then((response) => {
@@ -109,7 +144,6 @@ inquirer
       managerOffice
     );
 
-    //module.exports = newEmployee;
     console.log(manager);
     teamMembers.push(manager);
 
