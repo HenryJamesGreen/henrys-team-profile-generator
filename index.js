@@ -114,7 +114,7 @@ inquirer
       inquirer
         .prompt(menu)
         .then((response) => {
-          let menuOptions = response.menu;
+          let menuOptions = response.option;
           switch (menuOptions) {
             case "Add an engineer":
               inquirer.prompt(engineerQuestions).then((response) => {
@@ -140,14 +140,17 @@ inquirer
               inquirer.prompt(internQuestions).then((response) => {
                 console.log(response);
 
-             
-
                 const internName = response.internName;
                 const internId = response.internId;
                 const internEmail = response.internEmail;
                 const internSchool = response.internSchool;
 
-                const Intern = new Intern
+                const intern = new Intern(
+                  internName,
+                  internId,
+                  internEmail,
+                  internSchool
+                );
 
                 menuFunc();
               });
