@@ -67,6 +67,29 @@ const engineerQuestions = [
   },
 ];
 
+const internQuestions = [
+  {
+    type: "input",
+    message: "Please enter the Intern's name:",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "please enter the Intern's Employee ID:",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "please enter the Intern's email:",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "please enter the Intern's school:",
+    name: "github",
+  },
+];
+
 inquirer
   .prompt(promptQuestions)
   .then((response) => {
