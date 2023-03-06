@@ -38,6 +38,14 @@ const promptQuestions = [
     type: "input",
     message: "please enter the Team Manager's email:",
     name: "manEmail",
+    validate: function (manEmInput) {
+      const emailInputVal = /\S+@\S+\.\S+/;
+      if (emailInputVal.test(manEmInput)) {
+        return true;
+      } else {
+        return "Please enter a valid email address.";
+      }
+    },
   },
   {
     type: "input",
@@ -83,6 +91,14 @@ const engineerQuestions = [
     type: "input",
     message: "please enter the Engineer's email:",
     name: "enEmail",
+    validate: function (enEmInput) {
+      const enEmailInputVal = /\S+@\S+\.\S+/;
+      if (enEmailInputVal.test(enEmInput)) {
+        return true;
+      } else {
+        return "Please enter a valid email address.";
+      }
+    },
   },
   {
     type: "input",
@@ -117,6 +133,14 @@ const internQuestions = [
     type: "input",
     message: "please enter the Intern's email:",
     name: "internEmail",
+    validate: function (inEmInput) {
+      const inEmailInputVal = /\S+@\S+\.\S+/;
+      if (inEmailInputVal.test(inEmInput)) {
+        return true;
+      } else {
+        return "Please enter a valid email address.";
+      }
+    },
   },
   {
     type: "input",
