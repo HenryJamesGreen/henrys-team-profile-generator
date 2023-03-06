@@ -159,6 +159,12 @@ const internQuestions = [
     type: "input",
     message: "please enter the Intern's school:",
     name: "internSchool",
+    validate: function (schoolInput) {
+      if (schoolInput.trim() === "") {
+        return "Please enter a valid school.";
+      }
+      return true;
+    },
   },
 ];
 
