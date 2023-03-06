@@ -10,6 +10,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
+const teamMembers = [];
+
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
 const promptQuestions = [
@@ -109,6 +111,7 @@ inquirer
 
     //module.exports = newEmployee;
     console.log(manager);
+    teamMembers.push(manager);
 
     const menuFunc = function () {
       inquirer
@@ -131,7 +134,7 @@ inquirer
                   engineerEmail,
                   engineerGitHub
                 );
-
+                teamMembers.push(engineer);
                 menuFunc();
               });
               break;
@@ -151,6 +154,7 @@ inquirer
                   internEmail,
                   internSchool
                 );
+                teamMembers.push(intern);
 
                 menuFunc();
               });
@@ -158,6 +162,13 @@ inquirer
 
             case "Finish building the team":
               console.log("You have finished building your team!");
+              const html = render(teamMembers);
+              fs.writeFile(outputPath, html, (err) => {
+                if (err) throw err;
+                console.log(
+                  `Team profile has now been created. Please see ${outputPath}`
+                );
+              });
 
               break;
 
