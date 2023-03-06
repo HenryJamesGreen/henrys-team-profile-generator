@@ -37,6 +37,15 @@ const promptQuestions = [
   },
 ];
 
+const menu = [
+  {
+    type: "list",
+    message: "Choose a license for your project",
+    name: "license",
+    choices: ["MIT", "Apache", "BSD 3-Clause", "GNU GPL v3", "None"],
+  }
+]
+
 
 inquirer
   .prompt(promptQuestions)
@@ -49,7 +58,7 @@ inquirer
       const managerEmail = response.email;
       const managerOffice = response.officeNo;
 
-      const manager = new Manager(managerName, managerId, managerEmail, managerOffice)
+      const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
 
     //module.exports = newEmployee;
     console.log(manager);
