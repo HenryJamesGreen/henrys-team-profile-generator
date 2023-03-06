@@ -16,17 +16,17 @@ const promptQuestions = [
   {
     type: "input",
     message: "Please enter the Team Manager's name:",
-    name: "name",
+    name: "manName",
   },
   {
     type: "input",
     message: "please enter the Team Manager's Employee ID:",
-    name: "id",
+    name: "manId",
   },
   {
     type: "input",
     message: "please enter the Team Manager's email:",
-    name: "email",
+    name: "manEmail",
   },
   {
     type: "input",
@@ -48,22 +48,22 @@ const engineerQuestions = [
   {
     type: "input",
     message: "Please enter the Engineer's name:",
-    name: "name",
+    name: "enName",
   },
   {
     type: "input",
     message: "please enter the Engineer's Employee ID:",
-    name: "id",
+    name: "enId",
   },
   {
     type: "input",
     message: "please enter the Engineer's email:",
-    name: "email",
+    name: "enEmail",
   },
   {
     type: "input",
     message: "please enter the Engineer's GitHub username:",
-    name: "github",
+    name: "enGithub",
   },
 ];
 
@@ -71,22 +71,22 @@ const internQuestions = [
   {
     type: "input",
     message: "Please enter the Intern's name:",
-    name: "name",
+    name: "internName",
   },
   {
     type: "input",
     message: "please enter the Intern's Employee ID:",
-    name: "id",
+    name: "internId",
   },
   {
     type: "input",
     message: "please enter the Intern's email:",
-    name: "email",
+    name: "internEmail",
   },
   {
     type: "input",
     message: "please enter the Intern's school:",
-    name: "github",
+    name: "internSchool",
   },
 ];
 
@@ -95,9 +95,9 @@ inquirer
   .then((response) => {
     console.log(response);
 
-    const managerName = response.name;
-    const managerId = response.id;
-    const managerEmail = response.email;
+    const managerName = response.manName;
+    const managerId = response.manId;
+    const managerEmail = response.manEmail;
     const managerOffice = response.officeNo;
 
     const manager = new Manager(
