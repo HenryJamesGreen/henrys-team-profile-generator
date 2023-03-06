@@ -15,22 +15,22 @@ const render = require("./src/page-template.js");
 const promptQuestions = [
   {
     type: "input",
-    message: "Please enter the Team Manager's name.",
+    message: "Please enter the Team Manager's name:",
     name: "name",
   },
   {
     type: "input",
-    message: "please enter the Team Manager's Employee ID.",
+    message: "please enter the Team Manager's Employee ID:",
     name: "id",
   },
   {
     type: "input",
-    message: "please enter the Team Manager's email.",
+    message: "please enter the Team Manager's email:",
     name: "email",
   },
   {
     type: "input",
-    message: "please enter the Team Manager's office number.",
+    message: "please enter the Team Manager's office number:",
     name: "officeNo",
   },
 ];
@@ -41,6 +41,29 @@ const menu = [
     message: "Select an option:",
     name: "option",
     choices: ["Add an engineer", "Add an intern", "Finish building the team"],
+  },
+];
+
+const engineerQuestions = [
+  {
+    type: "input",
+    message: "Please enter the Engineer's name:",
+    name: "name",
+  },
+  {
+    type: "input",
+    message: "please enter the Engineer's Employee ID:",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "please enter the Engineer's email:",
+    name: "email",
+  },
+  {
+    type: "input",
+    message: "please enter the Engineer's GitHub username:",
+    name: "github",
   },
 ];
 
