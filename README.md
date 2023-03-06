@@ -4,7 +4,7 @@ An application designed to take user-inputted information about employees on a s
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![](screengrab-html.png)
+![](/images/screengrab-html.png)
 
 - [Installation](#Installation)
 - [Usage](#Usage)
