@@ -1,4 +1,3 @@
-
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -10,7 +9,6 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
-
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
@@ -40,25 +38,28 @@ const promptQuestions = [
 const menu = [
   {
     type: "list",
-    message: "Choose a license for your project",
-    name: "license",
-    choices: ["MIT", "Apache", "BSD 3-Clause", "GNU GPL v3", "None"],
-  }
-]
-
+    message: "Select an option:",
+    name: "option",
+    choices: ["Add an engineer", "Add an intern", "Finish building the team"],
+  },
+];
 
 inquirer
   .prompt(promptQuestions)
   .then((response) => {
-
     console.log(response);
 
-      const managerName = response.name;
-      const managerId = response.id;
-      const managerEmail = response.email;
-      const managerOffice = response.officeNo;
+    const managerName = response.name;
+    const managerId = response.id;
+    const managerEmail = response.email;
+    const managerOffice = response.officeNo;
 
-      const manager = new Manager(managerName, managerId, managerEmail, managerOffice);
+    const manager = new Manager(
+      managerName,
+      managerId,
+      managerEmail,
+      managerOffice
+    );
 
     //module.exports = newEmployee;
     console.log(manager);
